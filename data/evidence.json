@@ -1,0 +1,1 @@
+{"note":"Real NEAR testnet transactions only. Populated by scripts/testnet-demo.mjs (run from an open network). Each executionTxHash and approval txHash is verifiable at https://explorer.testnet.near.org/transactions/<hash>. Until the first real flow lands, this file is intentionally empty — no fabricated transactions.","proposals":[]}
