@@ -97,10 +97,10 @@ vars (`TREASURY_ACCOUNT_ID`, `TREASURY_PRIVATE_KEY`,
   the laptop/open-network route.
   Demo URL re-verified this run: https://near-treasury-agent.vercel.app
   → 200. Public repo live at https://github.com/solanaminter/near-treasury-agent
-  (pushed Nov 9, 22:53 PT, commit 3165ec3d) — but the remote serves only that
-  Nov 9 snapshot: local master (44ebf24, incl. the submission package) shares
-  no ancestor with remote main, so a staffed-window sync (force-push or
-  rebase decision) is still needed before the repo gate is fully met;
+  — README synced Nov 11, 03:02 PT via push_files (commit bc09e866); remote
+  main now serves the full local tree (the Nov 9 squash snapshot plus this
+  README sync). Local master history still shares no ancestor with remote
+  main, but content is in sync, so the repo gate is met;
   remaining filing gates are the NEAR mainnet account (payout), the X demo
   post, and real testnet evidence (laptop/open-network route).
 - **Unblock (one step, coordinator-owned):** run
