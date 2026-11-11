@@ -96,9 +96,13 @@ vars (`TREASURY_ACCOUNT_ID`, `TREASURY_PRIVATE_KEY`,
   testnet approval card has lapsed. Real testnet evidence still needs
   the laptop/open-network route.
   Demo URL re-verified this run: https://near-treasury-agent.vercel.app
-  → 200 (0.66s). Local repo clean at 781956e, no remote configured —
-  the public-repo gate is still Dy's tap (create the empty public repo,
-  then push).
+  → 200. Public repo live at https://github.com/solanaminter/near-treasury-agent
+  (pushed Nov 9, 22:53 PT, commit 3165ec3d) — but the remote serves only that
+  Nov 9 snapshot: local master (44ebf24, incl. the submission package) shares
+  no ancestor with remote main, so a staffed-window sync (force-push or
+  rebase decision) is still needed before the repo gate is fully met;
+  remaining filing gates are the NEAR mainnet account (payout), the X demo
+  post, and real testnet evidence (laptop/open-network route).
 - **Unblock (one step, coordinator-owned):** run
   `node scripts/testnet-demo.mjs` from any open network (laptop, Vercel,
   or the live browser's network), then `npm run verify-evidence`. The
