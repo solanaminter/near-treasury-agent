@@ -22,11 +22,13 @@ human-defined constraints).
   which the API routes call immediately before signing any transfer.
 - **Chain layer:** `lib/near.ts` — `near-api-js` v5 transfers on testnet,
   verified against the NEARBlocks indexer (`api-testnet.nearblocks.io`, GET)
-  with an RPC tx-status POST fallback. Every approval is itself a real
-  testnet transfer (approver → treasury); every execution is a real
-  transfer (treasury → vendor). No smart contract: the policy engine plus
-  signed transfers give verifiable on-chain evidence without a contract
-  deploy toolchain.
+  with an RPC tx-status POST fallback. By design, every approval is itself
+  a real testnet transfer (approver → treasury) and every execution is a
+  real transfer (treasury → vendor) — but no transfers have landed yet
+  (see "Testnet evidence — honest status" below), so nothing here claims
+  an on-chain execution exists today. No smart contract: the policy engine
+  plus signed transfers give verifiable on-chain evidence without a
+  contract deploy toolchain.
 - **App:** Next.js 15 + React 19, Vercel-deployable (`vercel.json`).
   Dashboard at `app/page.tsx`; API routes under `app/api/` (`state`,
   `proposals`, `approvals`, `execute`); state in `lib/store.ts`
@@ -46,8 +48,8 @@ human-defined constraints).
   without signing it waits as pending with an honest reason (never a fake
   transfer).
 - Propose a purchase over $100 → it waits in pending; approve as `owner`
-  and as `finance` (each approval is a real transfer) → Execute becomes
-  unblocked and moves funds.
+  and as `finance` (each approval is designed to be a real transfer once
+  testnet signing is configured) → Execute becomes unblocked and moves funds.
 - Propose over the category cap → the policy engine rejects it outright.
 
 ## Run it
@@ -116,9 +118,10 @@ vars (`TREASURY_ACCOUNT_ID`, `TREASURY_PRIVATE_KEY`,
 
 ## Judging criteria map
 
-- **Technological Implementation:** real NEAR testnet transfers via
-  `near-api-js`, policy-gated execution, indexer-verified hashes,
-  full test suite, production Next.js build passing.
+- **Technological Implementation:** NEAR testnet transfer layer built on
+  `near-api-js` with indexer verification, policy-gated execution, full
+  test suite, production Next.js build passing. Honest status: no on-chain
+  executions have landed yet — evidence pending (see below).
 - **Design:** one dashboard for policy, proposals, approvals, spend vs.
   cap, and verification status; every chain claim is one click from its
   explorer page.
@@ -128,8 +131,8 @@ vars (`TREASURY_ACCOUNT_ID`, `TREASURY_PRIVATE_KEY`,
 - **Quality of Idea:** approval-gated autonomy — the agent acts freely
   inside the policy and stops exactly at the human boundary.
 - **Project Sustainability:** the agent cannot spend outside policy by
-  construction; every execution is auditable on-chain; the model
-  generalizes to any procurement category or approver set.
+  construction; every execution is auditable on-chain by design once it
+  lands; the model generalizes to any procurement category or approver set.
 
 ## Tools used
 
