@@ -1,8 +1,10 @@
 # Treasury Agent — NEAR Hackathon submission package
 
-Prepared Nov 5, 2026 (hourly win loop). Filing is UNEDITABLE and one-shot —
-file LATE in the window (window closes Nov 14, 23:59 UTC / 3:59 PM PT), not
-early. Do not file until every gate below is green.
+Prepared Nov 5, 2026 (hourly win loop). UPDATE Nov 12, 21:49 PT: submissions
+CAN be amended after filing via the Request-changes page (organizers review
+by hand), so a keyless filing can be amended with testnet evidence later —
+but still file LATE in the window (window closes Nov 14, 23:59 UTC / 3:59 PM
+PT), not early. Do not file until every gate below is green.
 
 ## Form fields (nearhackathon.com submission form)
 
@@ -80,11 +82,9 @@ and explorer links.
 
 ## X demo post draft (Dy posts; NOT posted by agent)
 
-Treasury Agent — an approval-gated procurement treasury on NEAR testnet.
-Set the policy, the agent proposes, and funds move only when the policy
-allows. $100-and-under auto-executes; over $100 needs owner + finance.
-Policy engine + approval flow live on the demo; on-chain executions pending.
-Live demo: https://near-treasury-agent.vercel.app
+Treasury Agent — approval-gated procurement treasury on NEAR testnet. Funds move only when policy allows: ≤$100 auto-executes, over $100 needs owner + finance. Approval flow live; on-chain executions pending. Demo: https://near-treasury-agent.vercel.app @NEARProtocol #NEARHackathon
+
+(Fixed Fri Nov 13 evening: the Nov 5 draft was 371 chars with the required @NEARProtocol tag + #NEARHackathon hashtag added — over X's 280 limit — and it lacked both tags the brief requires. This version is 270 chars as X counts it (link counts 23), tags included. Attach a screenshot or short video of the live demo — the brief requires video or screenshots, text alone is not enough.)
 
 ⚠️ Nov 5 draft claimed "every transfer is a real signed testnet tx, verified
 on-chain" — NOT true yet. Use the honest wording above until real testnet
